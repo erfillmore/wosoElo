@@ -38,36 +38,6 @@ function probability(homeTeam,awayTeam){
   return document.write("the chance of "+homeTeam.name+" winning against "+awayTeam.name+" is "+percentage+"% <br>");
 }
 
-var gameMonthOne = [scores(kansasCity, portlandThorns, 0.5, 0.5),
-    scores(chicagoRedStars, seattleReign, 0.5, 0.5),
-    scores(skyBlue, westernNYFlash,1,0),
-    scores(bostonBreakers,washingtonSpirit,0.5,0.5),
-    scores(washingtonSpirit,westernNYFlash,0.5,0.5),
-    scores(portlandThorns,seattleReign,1,0),
-    scores(kansasCity,seattleReign,1,0),
-    scores(washingtonSpirit,skyBlue,0,1),
-    scores(chicagoRedStars,portlandThorns,0,1),
-    scores(westernNYFlash,bostonBreakers,0,1)
-];
-
-var gameMonthTwo = [
-  scores(westernNYFlash,skyBlue,1,0),
-  scores(bostonBreakers,chicagoRedStars,1,0),
-  scores(washingtonSpirit,portlandThorns,0,1),
-  scores(seattleReign,kansasCity,0,1),
-  scores(skyBlue,chicagoRedStars,0.5,0.5),
-  scores(washingtonSpirit,bostonBreakers,0.5,0.5),
-  scores(skyBlue,seattleReign,1,0),
-  scores(westernNYFlash,kansasCity,1,0),
-  scores(chicagoRedStars,portlandThorns,0,1),
-  scores(seattleReign,washingtonSpirit,0,1),
-  scores(portlandThorns,washingtonSpirit,1,0),
-  scores(seattleReign,skyBlue,0,1),
-  scores(westernNYFlash,chicagoRedStars,1,0),
-  scores(bostonBreakers,washingtonSpirit,1,0),
-  scores(seattleReign,portlandThorns,0,1),
-  scores(kansasCity,skyBlue,0,1)
-]
 
 function printScores(month){
   document.write("At the end of "+month+" NWSL Elo Scores are:<br>");
