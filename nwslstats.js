@@ -17,18 +17,17 @@ var nwslTeam = [
 ]
 
 function scores(homeTeam, awayTeam, homeResult, awayResult) {
-<<<<<<< HEAD
     //modifying kfunction
-    currentK = 25
+    currentK = 20
     goalDiff = Math.abs(homeResult - awayResult);
     if (goalDiff < 2) {
       currentK = 25;
     } else if (goalDiff == 2) {
-      currentK = currentK*1.5;
+      currentK = currentK*1.25;
     } else if (goalDiff == 3)  {
-      currentK = currentK*1.75;
+      currentK = currentK*1.5;
     } else {
-      currentK = (currentK * (0.75 + (goalDiff-3)/8))+ currentK;
+      currentK = (currentK * (0.5 + (goalDiff-3)/8))+ currentK;
     }
     // If Else statement so instead of putting in 0 or 1 into the function we can put in the ACTUAL score; have the function figure out who gets the 1 value
     if (homeResult > awayResult) { //home team score is GREATER than away team score; home=1, away=0
@@ -41,7 +40,7 @@ function scores(homeTeam, awayTeam, homeResult, awayResult) {
         homeResult = .5;
         awayResult = .5;
     }
-    homeTeamElo = homeTeam.eloScore + 20; //adding homefield advantage
+    homeTeamElo = (homeTeam.eloScore +10); //adding homefield advantage
     awayTeamElo = awayTeam.eloScore;
     var EloDifference = homeTeamElo - awayTeamElo;
     EloDifference = Math.abs(EloDifference);
