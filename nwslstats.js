@@ -12,7 +12,8 @@ var nwslTeam = [
   seattleReign = new teamObject("Seattle Reigh", "sr"),
   skyBlue = new teamObject("Sky Blue", "sb"),
   washingtonSpirit = new teamObject("Washington Spirit", "ws"),
-  westernNYFlash = new teamObject("Western New York Flash", "wnyf")
+  westernNYFlash = new teamObject("Western New York Flash", "wnyf"),
+  houstonDash = new teamObject("Houston Dash", "hd")
 ]
 
 function scores(homeTeam, awayTeam, homeResult, awayResult) {
