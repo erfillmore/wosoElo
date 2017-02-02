@@ -17,6 +17,7 @@ var nwslTeam = [
 ]
 
 function scores(homeTeam, awayTeam, homeResult, awayResult) {
+<<<<<<< HEAD
     //modifying kfunction
     currentK = 25
     goalDiff = Math.abs(homeResult - awayResult);
@@ -50,6 +51,7 @@ function scores(homeTeam, awayTeam, homeResult, awayResult) {
     homeTeam.eloScore = homeTeamElo + homeOutCome;
     awayTeam.eloScore = awayTeamElo + awayOutCome;
     // return document.write("postmatch eloscores are "+homeTeam.eloScore+" and also "+awayTeam.eloScore+"<br>");
+
 }
 
 
