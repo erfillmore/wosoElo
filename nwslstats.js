@@ -1,19 +1,21 @@
-var teamObject = function(name, id) {
+var teamObject = function(name, id, image) {
     this.name = name;
     this.eloScore = 1500;
     this.id = id
+    this.image = image
 }
 
 var nwslTeam = [
-    bostonBreakers = new teamObject("Boston Breakers", "bb"),
-    chicagoRedStars = new teamObject("Chicago Red Stars", "crs"),
-    kansasCity = new teamObject("Kansas City", "kcfc"),
-    portlandThorns = new teamObject("Portland Thorns", "ptfc"),
-    seattleReign = new teamObject("Seattle Reigh", "sr"),
-    skyBlue = new teamObject("Sky Blue", "sb"),
-    washingtonSpirit = new teamObject("Washington Spirit", "ws"),
-    westernNYFlash = new teamObject("Western New York Flash", "wnyf"),
-    houstonDash = new teamObject("Houston Dash", "hd")
+    bostonBreakers = new teamObject("Boston Breakers", "bb", "/logo/nwsl/Boston_Breakers.png"),
+    chicagoRedStars = new teamObject("Chicago Red Stars", "crs", "/logo/nwsl/chicago_red_stars.png"),
+    kansasCity = new teamObject("Kansas City", "kcfc", "/logo/nwsl/Kansas_City.png"),
+    portlandThorns = new teamObject("Portland Thorns", "ptfc", "/logo/nwsl/Portland_Thorns.png"),
+    seattleReign = new teamObject("Seattle Reigh", "sr", "/logo/nwsl/Seattle_Reign.png"),
+    skyBlue = new teamObject("Sky Blue", "sb", "/logo/nwsl/Sky_Blue.png"),
+    washingtonSpirit = new teamObject("Washington Spirit", "ws", "/logo/nwsl/Washington_Spirit.png"),
+    westernNYFlash = new teamObject("Western New York Flash", "wnyf", "/logo/nwsl/Western_New_York_Flash.png"),
+    houstonDash = new teamObject("Houston Dash", "hd", "/logo/nwsl/houston_dash.png"),
+    orlandoPride = new teamObject ("Orlando Pride", "op", "/logo/nwsl/Orlando_Pride.png")
 ]
 
 function scores(homeTeam, awayTeam, homeResult, awayResult) {
@@ -55,16 +57,15 @@ function scores(homeTeam, awayTeam, homeResult, awayResult) {
 
 
 function probability(homeTeam, awayTeam) {
-    homeTeamElo = homeTeam.eloScore;
+    homeTeamElo = homeTeam.eloScore +10;
     awayTeamElo = awayTeam.eloScore;
-    var EloDifference = homeTeamElo - awayTeamElo;
-    EloDifference = Math.abs(EloDifference);
-    var percentage = Math.round((1 / (1 + Math.pow(10, EloDifference / 400))) * 1000) / 10;
-    return document.write("the chance of " + homeTeam.name + " winning against " + awayTeam.name + " is " + percentage + "% <br>");
+    var eloDifference = homeTeamElo - awayTeamElo;
+    var percentage = Math.round((1 / (1 + Math.pow(10, eloDifference / 400))) * 1000) / 10;
+    return document.write("<br> the chance of " + awayTeam.name + " winning against " + homeTeam.name + " is " + percentage + "% <br>");
 }
 
 
-function printScores(array,month) {
+function printNWSLScores(array,month) {
     document.write("At the end of " + month + " NWSL Elo Scores are:<br>");
     for (i = 0; i < nwslTeam.length; i++) {
         document.write(nwslTeam[i].name + "=" + nwslTeam[i].eloScore + "<br>")

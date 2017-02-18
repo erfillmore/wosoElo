@@ -61,7 +61,7 @@ var gameMonthJune13 = [
 
 var gameMonthJuly13 = [
   scores(seattleReign,bostonBreakers,1,1),
-  scores(washingtonSpirit,bostonBreakers,1,1),
+  scores(washingtonSpirit,kansasCity,1,1),
   scores(chicagoRedStars,westernNYFlash,1,0),
   scores(skyBlue,washingtonSpirit,1,0),
   scores(portlandThorns,bostonBreakers,0,2),
