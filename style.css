@@ -1,0 +1,22 @@
+.{font-family: 'Lora', serif;}
+
+.center {
+    padding: 7px 0;
+    border: 3px green;
+    text-align: center;
+}
+
+table {
+  display: inline-block;
+  vertical-align: middle;
+  align-items: center;
+  margin: auto
+}
+
+table, tr {
+  border: 0.1px solid black;
+}
+
+section table {
+  width: auto
+}

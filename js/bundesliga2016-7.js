@@ -47,8 +47,8 @@ scores(freiburg,bayer04Leverkusen,2,1);
 scores(turbinePotsdam,duisburg,8,0);
 scores(frankfurt,sand,3,1);
 scores(uSVJena,vflWolfsburg,1,2);
-probability(freiburg,bayernMunich,2,3);
-probability(borussiaMonchengladbach,frankfurt);
-probability(vflWolfsburg,sand);
-probability(sgsEssen,duisburg);
-probability(uSVJena,bayer04Leverkusen)
+// probability(freiburg,bayernMunich,2,3);
+// probability(borussiaMonchengladbach,frankfurt);
+// probability(vflWolfsburg,sand);
+// probability(sgsEssen,duisburg);
+// probability(uSVJena,bayer04Leverkusen)
