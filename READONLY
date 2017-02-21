@@ -1,0 +1,21 @@
+HTML EDITS:
+*I want there to be seperate pages for each league
+*/js I want there to be an updating table with the top elo scores of the league at the bottom of every table
+
+CSS EDITS:
+*The page needs to be coherent, look good, and have a consistent color scheme.
+*/html Potentially, a stylesheet should be designed.
+
+JS EDITS
+*The data should be inputed such that not only can I find out what the elo score was of Team X at the end of Y month, but also 
+that I can find yearly elo scores (in 2013, a team's score was x, but in 2014 it was y)
+*At the end of every year, the score must revert to the mean by 1/3
+My notes say:
+GENERAL SEASON SCORES -
+general month function
+-------month game array of objects
+- import previous month(s) elo scores (thru object)
+- contain induvidual games
+- export an array of new elo scores
+- those new scores add to object 
+-
