@@ -94,10 +94,11 @@ function probability(homeTeam, awayTeam) {
   visualAppeal();
 }
 
-
+/*~hallmark of the Before DOM Code~
 function printNWSLScores(array, month) {
     document.write("At the end of " + month + " NWSL Elo Scores are:<br>");
     for (i = 0; i < nwslTeam.length; i++) {
         document.write(nwslTeam[i].name + "=" + nwslTeam[i].eloScore + "<br>")
     }
 }
+*/

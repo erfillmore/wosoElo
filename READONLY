@@ -19,3 +19,16 @@ general month function
 - export an array of new elo scores
 - those new scores add to object 
 -
+
+1) needs to know everyone's elo scores
+2) work out new elo score based on game
+3) work out elo probabilty
+
+
+how to call up a single month -- April 2013
+how to call up the entire season -- 2013 Season
+
+* * *
+
+* * *
+
