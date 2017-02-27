@@ -1,8 +1,10 @@
 var teamObject = function(name, id, image) {
     this.name = name;
     this.eloScore = 1500;
-    this.id = id
-    this.image = image
+    this.id = id;
+    this.image = image;
+    this.stats = [];
+    this.statsIndex = 0
 }
 
 var nwslTeam = [
@@ -18,9 +20,11 @@ var nwslTeam = [
     orlandoPride = new teamObject("Orlando Pride", "op", "logo/nwsl/Orlando_Pride.png")
 ]
 
-function scores(homeTeam, awayTeam, homeResult, awayResult) {
+function scores(season, homeTeam, awayTeam, homeResult, awayResult) {
     //modifying kfunction
-    currentK = 20
+    homeTeam.statsIndex++;
+    awayTeam.statsIndex++;
+    currentK = 20;
     goalDiff = Math.abs(homeResult - awayResult);
     if (goalDiff < 2) {
         currentK = 25;
@@ -50,11 +54,14 @@ function scores(homeTeam, awayTeam, homeResult, awayResult) {
     var homeOutCome = Math.round(currentK * (homeResult - percentage));
     var awayOutCome = Math.round(currentK * (awayResult - percentage));
     homeTeam.eloScore = homeTeamElo + homeOutCome;
+    homeTeam.stats[homeTeam.statsIndex]=[season, homeTeam.eloScore];
     awayTeam.eloScore = awayTeamElo + awayOutCome;
-    // return document.write("postmatch eloscores are "+homeTeam.eloScore+" and also "+awayTeam.eloScore+"<br>");
-
+    awayTeam.stats[awayTeam.statsIndex]=[season, awayTeam.eloScore];
 }
 
+function postScores() {
+
+}
 
 function probability(homeTeam, awayTeam) {
     homeTeamElo = homeTeam.eloScore + 10;
@@ -74,10 +81,10 @@ function probability(homeTeam, awayTeam) {
         awayTeamCell.innerText = awayTeam.name;
         gameRow.appendChild(awayTeamCell);
         var acowCell = document.createElement("td");
-        acowCell.innerHTML = "<center>"+Math.round(100 - percentage) + "%</center>";
+        acowCell.innerHTML = "<center>" + Math.round(100 - percentage) + "%</center>";
         gameRow.appendChild(acowCell);
         var hcowCell = document.createElement("td");
-        hcowCell.innerHTML = "<center>"+percentage + "%</center>";
+        hcowCell.innerHTML = "<center>" + percentage + "%</center>";
         gameRow.appendChild(hcowCell);
         var homeTeamCell = document.createElement("td");
         homeTeamCell.innerText = homeTeam.name;
@@ -91,14 +98,21 @@ function probability(homeTeam, awayTeam) {
         var table = document.getElementById("probability");
         table.appendChild(gameRow);
     }
-  visualAppeal();
+    visualAppeal();
 }
 
-/*~hallmark of the Before DOM Code~
-function printNWSLScores(array, month) {
-    document.write("At the end of " + month + " NWSL Elo Scores are:<br>");
-    for (i = 0; i < nwslTeam.length; i++) {
-        document.write(nwslTeam[i].name + "=" + nwslTeam[i].eloScore + "<br>")
-    }
+function revertMean() {
+  for (var i =0; i < nwslTeam.length; i++) {
+    var currentEloScore = nwslTeam[i].eloScore;
+    var revMean = (currentEloScore - 1500)/3;
+    nwslTeam[i].eloScore= currentEloScore - revMean;
+  }
 }
-*/
+
+// ~hallmark of the Before DOM Code~
+// function printNWSLScores(array, month) {
+//     document.write("At the end of " + month + " NWSL Elo Scores are:<br>");
+//     for (i = 0; i < nwslTeam.length; i++) {
+//         document.write(nwslTeam[i].name + "=" + nwslTeam[i].eloScore + "<br>")
+//     }
+// }
